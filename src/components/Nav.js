@@ -10,18 +10,21 @@ function Nav(){
     const [mobileDisplay, setMobileDisplay] = useState("none");
 
     function handleMenuClick(){
+        //slide animation for dropdown menu
         if (menuHeight === "0"){
             setMenuHeight("500px");
         }
         else{
             setMenuHeight("0");
         }
+        //animate opacity of dropdown
         if (menuOpacity === "0"){
             setMenuOpacity("1");
         }
         else{
             setMenuOpacity("0");
         }
+        //rotate arrow in dropdown menu
         if (arrowRotation === "rotate(0deg)"){
             setArrowRotation('rotate(180deg)');
         }
@@ -30,7 +33,7 @@ function Nav(){
         }
 
     }
-
+    //open mobile menu
     function handleMobileMenuClick(){
         setMobileDisplay("flex");
     }
@@ -44,7 +47,9 @@ function Nav(){
                     <img src='./img/icons/forward.png'/>
                 </button>
             </div>
-            <img src='./img/MahadRehan.jpg' className="icon" id="mobile-pfp" onClick={handleMobileMenuClick}/>
+            <button className="icon"  onClick={handleMobileMenuClick}>
+                <img  src='./img/MahadRehan.jpg' className="icon" id="mobile-pfp" />
+             </button>
             <button id="account-drop-down" className='button' onClick={handleMenuClick}>
                 <img src='./img/MahadRehan.jpg' className="icon" style={{width: "1.5rem"}}/>
                 mahaadr
@@ -54,7 +59,6 @@ function Nav(){
                     height={menuHeight}
                     items={MenuItems}
                 />
-
             </button>
             <MobileMenu
                 display={mobileDisplay}

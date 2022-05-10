@@ -9,8 +9,8 @@
 }
 
 body{
-
     margin: 0;
+    padding: 0;
     --background-teal: #326785;
     --background-grey: rgb(18,18,18);
     --drop-down-grey: #2A2A2A;
@@ -18,11 +18,6 @@ body{
     font-family: Proxima-Nova;
     color: white;
     background: var(--background-grey);
-    line-height: 1rem;
-}
-.title-container{
-    width: 100%;
-    border: 1px solid grey;
 }
 
 h1{
@@ -33,16 +28,16 @@ h1{
 }
 
 h2{
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: lighter;
-    width: 1rem;
-    cursor: default;
 }
+
 hr{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     border:1px solid#535353;
 }
+
 .icon{
     width: 0.875rem;
     border-radius: 4rem;
@@ -138,8 +133,6 @@ nav{
     /* border: 1px solid white; */
 
 }
-
-
 
 @media only screen and (max-width: 786px) {
     html,

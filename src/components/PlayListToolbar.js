@@ -14,6 +14,7 @@ function PlayListToolbar(){
     }
   
     function handleFavouriteClick(){
+      //set green or white outlined heart icon when user clicks button
       if (favouriteButton === "./img/icons/favourite(white-outline).png"){
         setFavouriteButton("./img/icons/Favourite Track.png");
       }

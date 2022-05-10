@@ -2,12 +2,15 @@ import React,{useEffect, useState} from 'react';
 import './style/App.css';
 import './style/Tracks.css';
 import './style/Playlist.css';
+import "animate.css/animate.min.css";
 
 import Nav from "./components/Nav"
 import PlayListVitals from "./components/PlayListVitals";
 import PlayListToolbar from "./components/PlayListToolbar";
 import PlayListHeader from "./components/PlayListHeader";
 import Track from "./components/Track";
+
+import ScrollAnimation from 'react-animate-on-scroll';
 
 function App() {
   let tracks = [
@@ -95,8 +98,8 @@ function App() {
 
   const [trackList, setTrackList] = useState(tracks);
 
-
-  async function sortTracks(key){
+  //sort tracks in order of name, album, or duration
+  function sortTracks(key){
     if(key === "title"){
       trackList.sort(function(a, b){
         a = Object.keys(a);
@@ -154,9 +157,9 @@ function App() {
         <ol id="tracks-list">
           { 
             trackList.map((track, itemKey) => {
+                //get song key, and send values as props
                 let song = Object.keys(track);
                 let src = `./img/album covers/${track[song].albumCover}`
-                //console.log("src: " + track[song].albumCover );
                 return(
                   <Track
                     key={itemKey}
@@ -167,8 +170,8 @@ function App() {
                     albumName={track[song].albumName}
                     dateAdded={track[song].dateAdded}
                     duration={track[song].duration}
-
-                />)
+                />
+                )
               }     
           )}
         </ol>

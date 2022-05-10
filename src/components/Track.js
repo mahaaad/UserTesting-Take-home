@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 
 function Track(props){
     const [trackNameColour, setTrackNameColour] = useState("white");
@@ -50,7 +51,7 @@ function Track(props){
         handleLikeClick()
      }
     return(
-        <li className="track" onMouseEnter={handleHover} onMouseLeave={handleMouseLeave} onTouchStart={tapHandler}>
+        <li className="track" onMouseEnter={handleHover} onMouseLeave={handleMouseLeave} onTouchStart={tapHandler} onClick>
             <div className="track-number">
                 {playing}
             </div>

@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 
 function MobileMenu(props){
     const[menuDisplay, setMenuDisplay] = useState(props.display);
-    console.log("men: " + props.display);
 
     useEffect(() => {
         setMenuDisplay(props.display);
@@ -25,13 +24,13 @@ function MobileMenu(props){
             </div>
 
             <div style={{width: "80%", padding: "1rem"}}>
-            {props.items.map((item)=>{
-                return (
-                    <h4>
-                        {item}
-                    </h4>
+                {props.items.map((item)=>{
+                    return (
+                        <h4>
+                            {item}
+                        </h4>
                     );
-            })}
+                })}
             </div>
         </div>
     )
