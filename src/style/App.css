@@ -1,0 +1,86 @@
+@font-face {
+    font-family: Proxima-Nova;
+    src: url(Proxima\ Nova\ Font.otf);
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    --background-teal: #326785;
+    --background-grey: rgba(50, 103, 133, 0);
+    --main-green:#65D46E;
+    font-family: Proxima-Nova;
+    color: white;
+    background: rgb(18,18,18);
+    line-height: 1rem;
+}
+h1{
+    font-size: 4.5rem;
+}
+
+h2{
+    font-size: 0.75rem;
+    font-weight: lighter;
+    width: 1rem;
+
+}
+.icon{
+    width: 0.875rem;
+    border-radius: 4rem;
+    flex: 0.1;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+}
+.button{
+    display: flex;
+    align-items: center;
+    background: var(--background-grey)!important;
+    border-radius: 4rem;
+    color: white;
+    padding: 1rem;
+}
+.button *{
+    padding: 0.5rem;
+}
+
+
+
+
+nav{
+    display:flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+#nav-buttons{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+#playlist-overlay{
+    background: #326785;
+    background: linear-gradient(0deg, var(--background-grey) 0%, var(--background-teal) 100%);
+    padding: 2rem;
+    padding-top: 0rem;
+}
+
+
+#tracks-section{
+    margin: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: white; 
+    /* border: 1px solid white; */
+
+}
+
+hr{
+    margin-top: 0;
+    margin-bottom: 0;
+    border:1px solid#535353;
+}

@@ -1,37 +1,38 @@
-import './App.css';
-import Track from "./components/Track"
+import './style/App.css';
+import './style/Tracks.css';
+import './style/Playlist.css';
+
+import Nav from "./components/Nav"
+import PlayListVitals from "./components/PlayListVitals";
+import PlayListToolbar from "./components/PlayListToolbar";
+import PlayListHeader from "./components/PlayListHeader";
+import Track from "./components/Track";
 
 function App() {
-  return (
+  return ( 
     <div className="App">
-      <nav>
+      <header id="playlist-overlay">
+        <Nav />
+        <PlayListVitals />
+        <PlayListToolbar />
+      </header>
 
-      </nav>
+      <section id="tracks-section">
+        <PlayListHeader />
+        <hr />
+        <ol id="tracks-list">
+          <Track
+            number = "1"
+            albumCover = "./img/album art/Album Artwork.png"
+            songName = "Space Ghoast Coast to Coast"
+            artist = "Glass Animals"
+            albumName = "Dreamland (+ Bonus Levels)"
+            dateAdded = "2 months ago"
+            duration = "3:07"
+          />
+        </ol>
+      </section>
 
-      <div className="playlist-vitals">
-
-      </div>
-
-      <div className="playlist-toolbar">
-
-      </div>
-
-      <div className="playlist-header">
-
-      </div>
-
-      <hr />
-
-      <ol className="tracks-section">
-        <Track
-          albumCover = "./img/Album Artwork.png"
-          songName = "Space Ghoast Coast to Coast"
-          artist = "Glass Animals"
-          albumName = "Dreamland (+ Bonus Levels)"
-          dateAdded = "2 months ago"
-          duration = "3:07"
-        />
-      </ol>
     </div>
   );
 }
