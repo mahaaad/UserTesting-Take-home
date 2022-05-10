@@ -2,7 +2,9 @@ import React, {useState} from "react";
 
 function Track(props){
     const [trackNameColour, setTrackNameColour] = useState("white");
-    const [playing, setPlaying] = useState(props.number)
+    const [playing, setPlaying] = useState(props.number);
+    const [liked, setLiked] = useState("./img/icons/favourite(white-outline).png");
+    const [likeButtonVisibility, setLikeButtonVisibility] = useState("hidden");
     
     function handleClick(){
         if (trackNameColour === "white"){
@@ -19,8 +21,24 @@ function Track(props){
             setPlaying(props.number)
         }
     }
+    function handleHover(){
+        setLikeButtonVisibility("visible");
+    }
+    function handleMouseLeave(){
+        if (liked !== "./img/icons/Favourite Track.png"){
+            setLikeButtonVisibility("hidden");
+        }
+    }
+    function handleLikeClick(){
+        if (liked === "./img/icons/favourite(white-outline).png"){
+            setLiked("./img/icons/Favourite Track.png");
+        }
+        else{
+            setLiked("./img/icons/favourite(white-outline).png");
+        }
+    }
     return(
-        <li className="track">
+        <li className="track" onMouseEnter={handleHover} onMouseLeave={handleMouseLeave}>
             <div className="track-number">
                 {playing}
             </div>
@@ -41,7 +59,7 @@ function Track(props){
             <div className="like-and-duration">
                 {/*Like button*/}
                 <button>
-                    <img src="./img/icons/Favourite Track.png" className="icon"/>
+                    <img src={liked} onClick={handleLikeClick} className="icon like-button" style={{visibility: likeButtonVisibility}}/>
                 </button>
 
                 {/*Duration*/}
