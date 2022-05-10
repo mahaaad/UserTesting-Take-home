@@ -10,7 +10,7 @@ function PlayListVitals(){
                     <h1>Mahad's Music Medley</h1>
                 </div>
                 <p><span>Drake, Kanye West, The Weeknd</span> and more</p>
-                <p>Made for mahadrehan - 50 songs, 3h 14min</p>
+                <p>Made for mahaadr - 50 songs, 3h 14min</p>
             </div>
       </div>
     )
