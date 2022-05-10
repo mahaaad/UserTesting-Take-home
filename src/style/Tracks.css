@@ -39,6 +39,7 @@
     cursor: pointer;
 }
 .track-artist{
+    width: 100%;
     font-size: 0.75rem; 
 }
 .track div, .track span, .track button{
@@ -66,9 +67,14 @@
     border-radius: 0;
 }
 
+.mobile-duration{
+    display: none;
+}
 @media only screen and (max-width: 786px) {
     .track-album-cover{
         width: 3.5rem;
     }
-
+    .mobile-duration{
+        display: inline-block;
+    }
 }

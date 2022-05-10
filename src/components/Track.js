@@ -37,8 +37,20 @@ function Track(props){
             setLiked("./img/icons/favourite(white-outline).png");
         }
     }
+
+    var tappedTwice = false;
+    function tapHandler(event) {
+        if(!tappedTwice) {
+            tappedTwice = true;
+            setTimeout( function() { tappedTwice = false; }, 500 );
+            return false;
+        }
+        event.preventDefault();
+        //action on double tap goes below
+        handleLikeClick()
+     }
     return(
-        <li className="track" onMouseEnter={handleHover} onMouseLeave={handleMouseLeave}>
+        <li className="track" onMouseEnter={handleHover} onMouseLeave={handleMouseLeave} onTouchStart={tapHandler}>
             <div className="track-number">
                 {playing}
             </div>
@@ -47,7 +59,7 @@ function Track(props){
                 {/*Song name and artist*/}
                 <div className="track-name-and-artist">
                     <p className="track-name" style={{color:trackNameColour}} onClick={handleClick}>{props.songName}</p>
-                    <p className="track-artist">{props.artist}</p>
+                    <p className="track-artist">{props.artist} <span className="mobile-duration">• {props.duration}</span></p>
                 </div>
             </div>
             {/*Album name*/}
