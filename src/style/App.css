@@ -1,6 +1,11 @@
 @font-face {
     font-family: Proxima-Nova;
-    src: url(Proxima\ Nova\ Font.otf);
+    src: url(Proxima-Nova.otf);
+}
+@font-face {
+    font-family: Proxima-Nova;
+    font-weight: bold;
+    src: url(Proxima-Nova-Bold.otf);
 }
 
 body{
@@ -8,6 +13,7 @@ body{
     margin: 0;
     --background-teal: #326785;
     --background-grey: rgb(18,18,18);
+    --drop-down-grey: #2A2A2A;
     --main-green:#65D46E;
     font-family: Proxima-Nova;
     color: white;
@@ -32,6 +38,11 @@ h2{
     width: 1rem;
     cursor: default;
 }
+hr{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border:1px solid#535353;
+}
 .icon{
     width: 0.875rem;
     border-radius: 4rem;
@@ -51,7 +62,6 @@ button{
     border-radius: 4rem;
     color: white;
     height: 2rem;
-
     padding: 0.25rem;
     margin: 0.25rem;
 }
@@ -72,6 +82,45 @@ nav{
 #mobile-pfp{
     display: none;
 }
+#account-drop-down{
+    position: relative;
+}
+.drop-down-menu{
+    overflow: hidden;
+    border-radius: 0.25rem;
+    position: absolute;
+    list-style: none;
+    width: 14rem;
+    margin: 0.5rem;
+    padding: 0;
+    top: 2rem;
+    right: 0;
+    background-color: var(--drop-down-grey);
+    box-shadow: 0 4px 4px #00000025;
+    transition: max-height 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+.menu-item{
+    padding: 0.75rem;
+    padding-left: 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: bold; 
+    transition: all 0.2s ease-in-out;
+}
+.menu-item:hover{
+    background-color: #535353;
+    transition: all 0.2s ease-in-out;
+}
+.menu-item hr{
+    height: 0;
+    width: 100%;
+    padding: 0!important;
+    margin: 0!important;
+}
+.menu-divider{
+    padding: 0!important;
+    margin: 0!important;
+}
 #playlist-overlay{
     background: #326785;
     background: linear-gradient(0deg, var(--background-grey) 20%, var(--background-teal) 100%);
@@ -89,11 +138,7 @@ nav{
 
 }
 
-hr{
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border:1px solid#535353;
-}
+
 
 @media only screen and (max-width: 786px) {
     html,
