@@ -48,9 +48,6 @@ button{
     padding: 0.5rem;
 }
 
-
-
-
 nav{
     display:flex;
     padding-top: 1rem;
@@ -80,7 +77,7 @@ nav{
 }
 
 hr{
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     border:1px solid#535353;
 }
