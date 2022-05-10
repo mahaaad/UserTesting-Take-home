@@ -7,10 +7,11 @@ function Nav(){
                 <button className='button'>
                     <img src='./img/icons/back.png'/>
                 </button>
-                <button className='button'>
+                <button className='button' id="forward-button">
                     <img src='./img/icons/forward.png'/>
                 </button>
             </div>
+            <img src='./img/MahadRehan.jpg' className="icon" id="mobile-pfp" />
             <button id="account-dropdown" className='button'>
                 <img src='./img/MahadRehan.jpg' className="icon" style={{width: "1.5rem"}}/>
                 mahadrehan

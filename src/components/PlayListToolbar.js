@@ -25,9 +25,11 @@ function PlayListToolbar(){
     return(
         <div id="playlist-toolbar">
             <div id="toolbar-buttons">
-                <button id="play-button" onClick={handlePlayClick}>
-                    <img src={playButton}/>
-                </button>
+                <div id="play-button-container">
+                  <button id="play-button" onClick={handlePlayClick}>
+                      <img src={playButton}/>
+                  </button>
+                </div>
                 <button id="favourite-button" onClick={handleFavouriteClick}>
                     <img src={favouriteButton}/>
                 </button>
@@ -37,14 +39,16 @@ function PlayListToolbar(){
                 <button id="settings-button">
                     <img src="./img/icons/settings.png"/>
                 </button>
-                </div>
-                <div id="search-buttons">
-                <button className='icon'>
-                    <img src="./img/icons/search.png" />
-                </button>
-                <button className='button'>
-                    Custom order
-                </button>
+            </div>
+
+            <div id="search-buttons">
+              <button className='icon' id="search-icon">
+                  <img src="./img/icons/search.png" />
+              </button>
+              <button className='button'>
+                  Custom order
+                  <img src="./img/icons/down.png" />
+              </button>
             </div>
         </div>
     )
