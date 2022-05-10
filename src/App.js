@@ -96,7 +96,6 @@ function App() {
   const [trackList, setTrackList] = useState(tracks);
 
 
-
   async function sortTracks(key){
     if(key === "title"){
       trackList.sort(function(a, b){
@@ -113,7 +112,19 @@ function App() {
         let bKey = Object.keys(b);
         //console.log("ALBUM NAME: " + a[aKey].albumName)
         if(a[aKey].albumName < b[bKey].albumName) { return -1; }
-        if(a[aKey].albumName < b[bKey].albumName) { return 1; }
+        if(a[aKey].albumName > b[bKey].albumName) { return 1; }
+        return 0; 
+      })
+    }
+    else if(key === "duration"){
+      trackList.sort(function(a, b){
+        let aDuration = a[Object.keys(a)].duration;
+        aDuration = aDuration[0] + aDuration.slice(2,3);
+        let bDuration = b[Object.keys(b)].duration;
+        bDuration = bDuration[0] + bDuration.slice(2,3);
+        console.log("duration: " + aDuration + bDuration)
+        if(aDuration < bDuration) { return -1; }
+        if(aDuration > bDuration) { return 1; }
         return 0; 
       })
     }
@@ -135,7 +146,7 @@ function App() {
             <h2 onClick={()=>{sortTracks("title")}}>TITLE</h2>
             <h2 onClick={()=>{sortTracks("album")}}>ALBUM</h2>
             <h2 onClick={()=>{sortTracks("date")}}>DATE ADDED</h2>
-            <button className='icon' >
+            <button className='icon' onClick={()=>{sortTracks("duration")}} >
                 <img src="./img/icons/time.png" id="time-icon" className="icon"/>
             </button>
         </div>
@@ -157,12 +168,11 @@ function App() {
                     dateAdded={track[song].dateAdded}
                     duration={track[song].duration}
 
-                  />)
-          }     
-        )}
+                />)
+              }     
+          )}
         </ol>
       </section>
-
     </div>
   );
 }

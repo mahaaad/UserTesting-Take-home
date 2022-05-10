@@ -12,7 +12,11 @@
     justify-content: stretch;
     align-items: center;
     font-size: 0.875rem;
-
+    transition: all 0.2s ease-in-out;
+}
+.track:hover{
+    background: #2A2A2A;
+    transition: all 0.2s ease-in-out;
 }
 .track > div, .track > span{
     flex: 1;
@@ -32,6 +36,7 @@
 }
 .track-name{
     font-size: 0.875rem;
+    cursor: pointer;
 }
 .track-artist{
     font-size: 0.75rem; 
