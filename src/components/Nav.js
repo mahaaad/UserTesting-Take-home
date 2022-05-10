@@ -12,7 +12,7 @@ function Nav(){
                 </button>
             </div>
             <button id="account-dropdown" className='button'>
-                <img src='./img/MahadRehan.jpg' class="icon" style={{width: "1.5rem"}}/>
+                <img src='./img/MahadRehan.jpg' className="icon" style={{width: "1.5rem"}}/>
                 mahadrehan
                 <img src='./img/icons/down.png'/>  
             </button>

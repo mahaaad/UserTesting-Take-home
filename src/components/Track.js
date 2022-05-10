@@ -6,7 +6,7 @@ function Track(props){
             <small className="track-number">{props.number}</small>
             <div className="track-info">
 
-                <img className="track-album-cover" src={props.albumCover}/>
+                <img className="track-album-cover" src={props.albumCover} />
                 {/*Song name and artist*/}
                 <div className="track-name-and-artist">
                     <p className="track-name">{props.songName}</p>
